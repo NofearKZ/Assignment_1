@@ -1,27 +1,13 @@
 package com.ecommerce.entities;
 
-/**
- * The base class representing a user of the e‑commerce system.
- *
- * <p>Users can be customers or employees. All user information is
- * encapsulated with private fields and accessed through getters and
- * setters to ensure proper data hiding. Subclasses can extend this
- * class to provide role‑specific functionality.</p>
- */
+
 public abstract class User {
     private String name;
     private String email;
     private String password;
     private String role; // e.g. "customer" or "employee"
 
-    /**
-     * Constructs a User with the specified details.
-     *
-     * @param name     the full name of the user
-     * @param email    the email address of the user
-     * @param password the password for the user account
-     * @param role     the role of the user in the system
-     */
+
     public User(String name, String email, String password, String role) {
         this.name = name;
         this.email = email;
@@ -63,9 +49,7 @@ public abstract class User {
         this.role = role;
     }
 
-    /**
-     * Displays basic information about the user.
-     */
+
     public void displayInfo() {
         System.out.println("Name: " + name);
         System.out.println("Email: " + email);

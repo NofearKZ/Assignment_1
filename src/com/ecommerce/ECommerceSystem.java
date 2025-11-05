@@ -5,13 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * Main class for the console‑based e‑commerce system. This program
- * demonstrates object‑oriented principles such as inheritance and
- * encapsulation while providing a simple interactive menu for
- * managing users, products and orders. Employees can add users and
- * products, whereas customers can browse products and place orders.
- */
+
 public class ECommerceSystem {
     private List<User> users;
     private List<Product> products;
@@ -26,10 +20,7 @@ public class ECommerceSystem {
         initializeSampleData();
     }
 
-    /**
-     * Populates the system with a default employee and some sample products
-     * to facilitate testing without requiring manual setup.
-     */
+
     private void initializeSampleData() {
         // default admin employee
         Employee admin = new Employee("Admin", "admin@example.com", "admin123");
@@ -40,10 +31,7 @@ public class ECommerceSystem {
         products.add(new Clothing("T‑Shirt", 14.99, 50, "M", "Blue"));
     }
 
-    /**
-     * Starts the interactive console application. Users choose their role
-     * (employee or customer) and then perform tasks based on that role.
-     */
+
     public void start() {
         System.out.println("Welcome to the Console‑Based E‑Commerce System!");
         boolean running = true;
@@ -75,10 +63,7 @@ public class ECommerceSystem {
         System.out.println("Thank you for using the system. Goodbye!");
     }
 
-    /**
-     * Handles employee login by prompting for email and password. If the user
-     * is an employee, the employee menu is displayed.
-     */
+
     private void employeeLogin() {
         System.out.print("Enter email: ");
         String email = scanner.nextLine();
@@ -93,12 +78,7 @@ public class ECommerceSystem {
         System.out.println("Authentication failed. Please check your credentials or register.");
     }
 
-    /**
-     * Displays the employee menu and handles employee actions such as adding
-     * users and products, and listing entities.
-     *
-     * @param employee the authenticated employee
-     */
+
     private void employeeMenu(Employee employee) {
         boolean running = true;
         while (running) {
@@ -132,10 +112,7 @@ public class ECommerceSystem {
         }
     }
 
-    /**
-     * Handles customer login by prompting for email and password. If the user
-     * is a customer, the customer menu is displayed.
-     */
+
     private void customerLogin() {
         System.out.print("Enter email: ");
         String email = scanner.nextLine();
@@ -150,12 +127,7 @@ public class ECommerceSystem {
         System.out.println("Authentication failed. Please check your credentials or register.");
     }
 
-    /**
-     * Displays the customer menu and handles customer actions such as browsing
-     * products and placing orders.
-     *
-     * @param customer the authenticated customer
-     */
+
     private void customerMenu(Customer customer) {
         boolean running = true;
         while (running) {
@@ -185,9 +157,7 @@ public class ECommerceSystem {
         }
     }
 
-    /**
-     * Registers a new user as either a customer or an employee.
-     */
+
     private void registerUser() {
         System.out.println("\nRegister New User");
         System.out.print("Enter name: ");
@@ -211,9 +181,7 @@ public class ECommerceSystem {
         }
     }
 
-    /**
-     * Lists all registered users with their role and identification.
-     */
+
     private void listUsers() {
         if (users.isEmpty()) {
             System.out.println("No users available.");
@@ -226,11 +194,7 @@ public class ECommerceSystem {
         }
     }
 
-    /**
-     * Adds a new product to the system. The employee chooses the type of product
-     * and provides the necessary details. Input validation is minimal for
-     * simplicity.
-     */
+
     private void addProduct() {
         System.out.println("\nAdd Product");
         System.out.println("Select product type:");
@@ -274,9 +238,7 @@ public class ECommerceSystem {
         System.out.println("Product added successfully!");
     }
 
-    /**
-     * Displays all products currently available in the system.
-     */
+
     private void listProducts() {
         if (products.isEmpty()) {
             System.out.println("No products available.");
@@ -288,12 +250,7 @@ public class ECommerceSystem {
         }
     }
 
-    /**
-     * Facilitates placing an order for a customer. The customer selects
-     * products by entering their IDs. Stock levels are updated accordingly.
-     *
-     * @param customer the customer placing the order
-     */
+
     private void placeOrder(Customer customer) {
         if (products.isEmpty()) {
             System.out.println("No products available to order.");
@@ -350,11 +307,7 @@ public class ECommerceSystem {
         }
     }
 
-    /**
-     * Displays all orders belonging to the specified customer.
-     *
-     * @param customer the customer whose orders should be displayed
-     */
+
     private void viewCustomerOrders(Customer customer) {
         boolean found = false;
         for (Order o : orders) {
@@ -368,11 +321,7 @@ public class ECommerceSystem {
         }
     }
 
-    /**
-     * Parses an integer input from the scanner and handles invalid input.
-     *
-     * @return a valid integer entered by the user
-     */
+
     private int parseIntInput() {
         while (true) {
             try {
@@ -384,11 +333,7 @@ public class ECommerceSystem {
         }
     }
 
-    /**
-     * Parses a double input from the scanner and handles invalid input.
-     *
-     * @return a valid double entered by the user
-     */
+
     private double parseDoubleInput() {
         while (true) {
             try {
@@ -400,12 +345,7 @@ public class ECommerceSystem {
         }
     }
 
-    /**
-     * The program's entry point. Creates an instance of the system and starts
-     * the interactive console.
-     *
-     * @param args command line arguments (unused)
-     */
+
     public static void main(String[] args) {
         ECommerceSystem system = new ECommerceSystem();
         system.start();
